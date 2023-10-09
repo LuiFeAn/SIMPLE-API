@@ -1,0 +1,17 @@
+{
+  "name": "simple-api",
+  "version": "1.0.0",
+  "description": "API feita sem a utilização de frameworks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Fernando",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.8.3",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
+  }
+}
