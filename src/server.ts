@@ -9,10 +9,13 @@ import RouteHandler from './lib/route-handler';
 import GlobalErrorHandler from './lib/global-error-handler';
 
 import BodyParserHandler from './lib/body-parser-handler';
+import CorsHandler from './lib/cors-handler';
 
 const server = createServer(async ( req, res ) => {
 
-    process.on('uncaughtException', (err) => GlobalErrorHandler(err,req,res) )
+    process.on('uncaughtException', (err) => GlobalErrorHandler(err,req,res) );
+
+    CorsHandler(req,res);
 
     await BodyParserHandler(req,res);
 

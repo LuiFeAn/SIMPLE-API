@@ -11,8 +11,6 @@ export default function RouteHandler(req: Request, res: Response){
     if( route ){
 
         res.setHeader('Content-Type', 'application/json');
-        
-        res.setHeader('Access-Control-Allow-Origin', '*');
 
         route.handler(req,res);
 
