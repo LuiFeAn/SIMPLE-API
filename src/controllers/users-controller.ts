@@ -16,10 +16,8 @@ export const index = ( req: Request, res: Response)  => {
 
 export const store = ( req: Request, res: Response ) => {
 
-    let body = '';
+    usersService.create(req.body as unknown as IUser);
 
-    req.on('data', chunck => body += chunck);
-
-    req.on('end', () => usersService.create(JSON.parse(body) as unknown as IUser));
+    res.writeHead(200);
 
 }
