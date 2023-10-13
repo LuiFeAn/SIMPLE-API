@@ -10,9 +10,7 @@ export const index = ( req: Request, res: Response)  => {
 
     const users = usersService.findAll();
 
-    res.writeHead(200);
-
-    res.end(JSON.stringify(users));
+    res.json(users);
 
 }
 
@@ -31,9 +29,8 @@ export const store = ( req: Request, res: Response ) => {
     }
 
     usersService.create(req.body as unknown as IUser);
-
-    res.writeHead(200);
-
-    res.end();
+    
+    res.sendStatus(204);
+    
 
 }
