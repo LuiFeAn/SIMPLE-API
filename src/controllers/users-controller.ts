@@ -28,9 +28,9 @@ export const store = ( req: Request, res: Response ) => {
 
     }
 
-    usersService.create(req.body as unknown as IUser);
+    const user = usersService.create(req.body as unknown as IUser);
     
-    res.sendStatus(204);
+    res.json(user);
     
 
 }

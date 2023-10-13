@@ -14,6 +14,8 @@ export const create = (userDto: IUser) => {
 
     }
 
-    usersRepository.insert(userDto);
+    const inMemoryCreatedUser = usersRepository.insert(userDto);
+
+    return inMemoryCreatedUser;
 
 }
