@@ -6,12 +6,10 @@ export default function GlobalErrorHandler(error: any, req: Request, res: Respon
 
     if( error instanceof ApiError ){
 
-        res.statusCode = error.statusCode;
-
-        res.end(JSON.stringify({
-            error: error.message,
-            statusCode: error.statusCode
-        }));
+       res.json({
+        error: error.message,
+        statusCode: error.statusCode
+       });
         
     }
 
