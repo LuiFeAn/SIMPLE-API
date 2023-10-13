@@ -6,6 +6,14 @@ declare module "http" {
 
     }
 
-  }
+    interface ServerResponse{
+
+      sendStatus(statusCode: number): void
+
+      json(data: any, statusCode?: number): void
+
+    }
+
+}
 
   
